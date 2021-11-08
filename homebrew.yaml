@@ -26,6 +26,8 @@
         - sqlite
         - wget
         - gh
+        - nvm
+        - pyenv
     - name: Tap a Homebrew repository, state present
       homebrew_tap:
         name: homebrew/cask-fonts
