@@ -1,0 +1,19 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Install apps with homebrew
+      homebrew: name={{ item }} state=present
+      with_items:
+        - wget
+        - vim
+        - tmux
+        - htop
+        - ag
+        - git
+        - python3
+        - zsh
+        - bash
+        - reattach-to-user-namespace
+        - hugo
+        - graphviz
