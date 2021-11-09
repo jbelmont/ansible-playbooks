@@ -30,6 +30,7 @@
         - pyenv
         - jq
         - yarn
+        - bfg
     - name: Tap a Homebrew repository, state present
       homebrew_tap:
         name: "{{ item }}"
