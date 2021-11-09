@@ -28,6 +28,8 @@
         - gh
         - nvm
         - pyenv
+        - jq
+        - yarn
     - name: Tap a Homebrew repository, state present
       homebrew_tap:
         name: "{{ item }}"
