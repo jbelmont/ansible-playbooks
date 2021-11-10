@@ -1,36 +1,46 @@
 ---
 - hosts: 127.0.0.1
+  vars:
+    base_install_packages:
+      - wget
+      - vim
+      - tmux
+      - htop
+      - ag
+      - git
+      - python3
+      - zsh
+      - bash
+      - hugo
+      - graphviz
+      - tree
+      - jenkins
+      - neovim
+      - openssl
+      - nmap
+      - shellcheck
+      - telnet
+      - sqlite
+      - wget
+      - gh
+      - nvm
+      - pyenv
+      - jq
+      - yarn
+      - bfg
+      - starship
+    cask_install_packages:
+      - dropbox
+      - visual-studio-code
+      - keepassxc
+      - zoom
+      - font-hack-nerd-font
+      - slack
   connection: local
   tasks:
     - name: Install apps with homebrew
       homebrew: name={{ item }} state=present
-      with_items:
-        - wget
-        - vim
-        - tmux
-        - htop
-        - ag
-        - git
-        - python3
-        - zsh
-        - bash
-        - hugo
-        - graphviz
-        - tree
-        - jenkins
-        - neovim
-        - openssl
-        - nmap
-        - shellcheck
-        - telnet
-        - sqlite
-        - wget
-        - gh
-        - nvm
-        - pyenv
-        - jq
-        - yarn
-        - bfg
+      loop: "{{ base_install_packages }}"
     - name: Tap a Homebrew repository, state present
       homebrew_tap:
         name: "{{ item }}"
@@ -39,13 +49,7 @@
         - homebrew/cask-fonts
     - name: Install cask packages
       homebrew_cask: name={{ item }} state=present
-      with_items:
-        - dropbox
-        - visual-studio-code
-        - keepassxc
-        - zoom
-        - font-hack-nerd-font
-        - slack
+      loop: "{{ cask_install_packages }}"
     - name: Install Terraform
       shell: |
         brew tap hashicorp/tap
