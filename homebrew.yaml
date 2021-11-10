@@ -36,6 +36,7 @@
       - zoom
       - font-hack-nerd-font
       - slack
+      - docker
   connection: local
   tasks:
     - name: Install apps with homebrew
