@@ -37,6 +37,7 @@
       - font-hack-nerd-font
       - slack
       - docker
+      - font-fira-code
   connection: local
   tasks:
     - name: Install apps with homebrew
