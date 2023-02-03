@@ -1,0 +1,30 @@
+{{ ansible_managed }}
+
+INVENTORY_HOSTNAME = {{ inventory_hostname | default('NONE', true) }}
+OS_DISTRO_VERSION = {{ ansible_distribution_version | default('NONE', true) }}
+
+PYTHON_VERSION = {{ ansible_python_version | default('NONE', true) }}
+SELINUX_STATUS = {{ ansible_selinux | default('NONE', true) }}
+BIOS_VERSION = {{ ansible_bios_version | default('NONE', true) }}
+BIOS_DATE = {{ ansible_bios_date | default('NONE', true) }}
+TOTAL_MEMORY = {{ ansible_memtotal_mb | default('NONE', true) }}
+
+CURRENT_MEMORY_USAGE = {{ ansible_memory_mb['real']['used'] }} mb out of {{ ansible_memory_mb['real']['total'] }} mb
+OS_FAMILY = {{ ansible_os_family | default('NONE', true) }}
+OS_DISTRO = {{ ansible_architecture | default('NONE', true) }}
+
+OS_KERNEL_VERSION = {{ ansible_kernel | default('NONE', true) }}
+OS_ARCHITECTURE = {{ ansible_architecture | default('NONE', true) }}
+
+PROCESSOR = {{ ansible_processor | default('NONE', true) }}
+VIRT_TYPE = {{ ansible_virtualization_type | default('NONE', true) }}
+
+VDA_SIZE = {% if ansible_devices.vda is defined %}
+{{ ansible_devices.vdb.size }}{% else %}
+NONE
+{% endif %}
+
+VDB_SIZE = {% if ansible_devices.vdb is defined %}
+{{ ansible_devices.vdb.size }}{% else %}
+NONE
+{% endif %}
