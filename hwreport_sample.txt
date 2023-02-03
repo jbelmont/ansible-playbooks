@@ -1,0 +1,24 @@
+Ansible managed
+
+INVENTORY_HOSTNAME = managed1.example.com
+OS_DISTRO_VERSION = 8.5
+
+PYTHON_VERSION = 3.6.8
+SELINUX_STATUS = {'status': 'enabled', 'policyvers': 33, 'config_mode': 'enforcing', 'mode': 'enforcing', 'type': 'targeted'}
+BIOS_VERSION = VirtualBox
+BIOS_DATE = 12/01/2006
+TOTAL_MEMORY = 809
+
+CURRENT_MEMORY_USAGE = 713 mb out of 809 mb
+OS_FAMILY = RedHat
+OS_DISTRO = x86_64
+
+OS_KERNEL_VERSION = 4.18.0-305.19.1.el8_4.x86_64
+OS_ARCHITECTURE = x86_64
+
+PROCESSOR = ['0', 'AuthenticAMD', 'AMD Ryzen 7 3700X 8-Core Processor', '1', 'AuthenticAMD', 'AMD Ryzen 7 3700X 8-Core Processor']
+VIRT_TYPE = virtualbox
+
+VDA_SIZE = NONE
+
+VDB_SIZE = NONE
